@@ -1,78 +1,230 @@
-/* NEW: Navigation Button Styling */
+/* Basic Reset & Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Georgia', serif; /* A classic, elegant serif font */
+    line-height: 1.6;
+    color: #4A4A4A; /* Softer, richer dark grey */
+    background-color: #F8F8F8; /* Very light off-white background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px; /* Max width for content */
+    margin: 20px auto; /* Center content with some top/bottom margin */
+    padding: 0 20px; /* Padding on sides for smaller screens */
+}
+
+header {
+    background-color: #264653; /* Dark teal/pine green - sophisticated */
+    color: #E9EDEE; /* Light grey for text on dark background */
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 5px solid #E9C46A; /* Warm, golden accent */
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif; /* Elegant heading font */
+    font-size: 3.5em; /* Slightly larger for impact */
+    margin-bottom: 10px;
+    letter-spacing: 2px; /* Increased spacing for elegance */
+}
+
+header p {
+    font-size: 1.3em; /* Slightly larger paragraph */
+    opacity: 0.9;
+}
+
+/* Navigation Links Styling (now <a> tags) */
 nav {
-    margin-top: 20px;
-    display: flex; /* Arrange buttons in a row */
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-    justify-content: center; /* Center the buttons */
-    gap: 10px; /* Space between buttons */
+    margin-top: 25px; /* More space above nav */
 }
 
-.nav-button {
-    background-color: #34495e; /* Slightly lighter dark blue */
-    color: #ecf0f1;
-    border: none;
-    padding: 12px 25px;
+.nav-link {
+    background-color: #366171; /* Darker teal for links */
+    color: #E9EDEE;
+    text-decoration: none; /* Remove underline */
+    padding: 12px 25px; /* More padding for a bolder look */
+    margin: 0 8px; /* Spacing between links */
+    border-radius: 5px; /* Slightly rounded */
+    cursor: pointer; /* Keep pointer cursor */
     font-size: 1.1em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    min-width: 150px; /* Ensure buttons have a minimum width */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Roboto', sans-serif; /* Clean sans-serif for links */
+    letter-spacing: 0.5px;
+    display: inline-block; /* Allows padding and margin */
 }
 
-.nav-button:hover {
-    background-color: #3498db; /* Accent blue on hover */
-    transform: translateY(-2px); /* Slight lift effect */
+.nav-link:hover {
+    background-color: #4A8C9C; /* Lighter teal on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
-.nav-button.active {
-    background-color: #3498db; /* Accent blue for active button */
-    color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transform: translateY(-1px);
+.nav-link.active {
+    background-color: #E9C46A; /* Golden accent for active link */
+    color: #264653; /* Dark text on golden background */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* Subtle shadow for active */
 }
 
-/* NEW: Section visibility and animation */
-main section {
-    opacity: 0; /* Initially hidden */
-    display: none; /* Hide from layout flow */
-    transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
-    will-change: opacity; /* Optimize for animation */
-    /* Add padding and margin here instead of repeating in each section */
-    padding: 20px;
-    margin-bottom: 20px;
-}
 
-/* Make sure the initial active section is visible immediately */
-main section#about {
-    opacity: 1; /* Keep about section visible initially */
-    display: block; /* And in the layout flow */
-}
-
-/* Ensure footer remains at the bottom */
-footer {
-    position: relative; /* Changed to relative for normal flow */
-    width: 100%;
-    margin-top: 40px; /* Add margin to separate from content */
-}
-
-/* Re-adjust main padding/margin if needed */
 main {
-    padding-top: 0; /* Remove top padding since sections have their own */
+    padding: 40px 20px;
+    max-width: 900px; /* Match header width */
+    margin: 0 auto;
+    background-color: #FFFFFF; /* White background for main content */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* More pronounced, softer shadow */
+    border-radius: 10px; /* Slightly more rounded corners */
 }
 
-/* Adjust general spacing for sections to prevent double padding */
-/* Remove or adjust existing padding on .container and individual sections if necessary */
-/* E.g., if you have `main { padding: 40px 20px; }` you might want to adjust it to prevent double padding if sections also have padding. */
-/* The provided main section styling handles padding for individual sections. */
+section {
+    margin-bottom: 45px; /* More space between sections */
+    padding-bottom: 25px;
+    border-bottom: 1px solid #EDEDED; /* Lighter, more subtle separator */
+}
 
-/* Small screen adjustments for navigation buttons */
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: stretch; /* Stretch buttons to full width */
+section:last-of-type {
+    border-bottom: none; /* No border for the last section */
+    margin-bottom: 0;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif; /* Match header h1 font */
+    color: #264653; /* Match header dark color */
+    font-size: 2.5em; /* Larger headings for sections */
+    margin-bottom: 20px; /* More space below heading */
+    border-left: 6px solid #E9C46A; /* Thicker, golden accent bar */
+    padding-left: 12px;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 18px; /* More space between paragraphs */
+    line-height: 1.7; /* Comfortable reading */
+    font-size: 1.05em; /* Slightly larger text */
+}
+
+ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+ul li {
+    background-color: #F5F9FB; /* Very light blue/grey for list items */
+    margin-bottom: 10px; /* More space between list items */
+    padding: 12px 20px;
+    border-radius: 6px;
+    border-left: 4px solid #78909C; /* A muted blue-grey accent for list items */
+    font-size: 1.05em;
+}
+
+ul li strong {
+    color: #264653; /* Match primary dark color */
+}
+
+.project-item {
+    background-color: #FAFAFA; /* Subtle background for project boxes */
+    border: 1px solid #E0E0E0; /* Softer border */
+    padding: 25px; /* More padding */
+    margin-bottom: 25px; /* More space below */
+    border-radius: 10px; /* More rounded */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* Lighter shadow */
+}
+
+.project-item h3 {
+    font-family: 'Playfair Display', serif; /* Match heading font */
+    color: #3C5A6B; /* Slightly lighter dark color */
+    margin-bottom: 12px;
+    font-size: 1.8em;
+}
+
+footer {
+    background-color: #264653; /* Match header dark color */
+    color: #E9EDEE;
+    text-align: center;
+    padding: 35px 20px; /* More padding */
+    margin-top: 50px; /* More space above footer */
+    border-top: 5px solid #E9C46A; /* Golden accent */
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners if main content is also rounded */
+}
+
+footer h2 {
+    color: #E9EDEE; /* Light color for heading in footer */
+    border-left-color: #E9C46A; /* Golden accent bar */
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+a {
+    color: #E9C46A; /* Golden accent for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #D4AF37; /* Slightly darker gold on hover */
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 25px; /* More space above copyright */
+    font-size: 0.95em;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
     }
-    .nav-button {
-        min-width: unset; /* Remove min-width on small screens */
+
+    header p {
+        font-size: 1.1em;
+    }
+
+    .nav-link { /* Adjust nav link styling for smaller screens */
+        padding: 10px 20px;
+        margin: 0 5px;
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .project-item h3 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    main, footer {
+        padding: 25px 15px;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .nav-link { /* Stack links on very small screens */
+        display: block;
+        width: calc(100% - 16px);
+        margin: 10px auto;
+    }
+
+    h2 {
+        font-size: 1.8em;
     }
 }
