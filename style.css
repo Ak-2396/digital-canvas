@@ -40,32 +40,33 @@ header p {
     opacity: 0.9;
 }
 
-/* Navigation Buttons Styling */
+/* Navigation Links Styling (now <a> tags) */
 nav {
     margin-top: 25px; /* More space above nav */
 }
 
-.nav-button {
-    background-color: #366171; /* Darker teal for buttons */
+.nav-link {
+    background-color: #366171; /* Darker teal for links */
     color: #E9EDEE;
-    border: none;
+    text-decoration: none; /* Remove underline */
     padding: 12px 25px; /* More padding for a bolder look */
-    margin: 0 8px; /* Spacing between buttons */
+    margin: 0 8px; /* Spacing between links */
     border-radius: 5px; /* Slightly rounded */
-    cursor: pointer;
+    cursor: pointer; /* Keep pointer cursor */
     font-size: 1.1em;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    font-family: 'Roboto', sans-serif; /* Clean sans-serif for buttons */
+    font-family: 'Roboto', sans-serif; /* Clean sans-serif for links */
     letter-spacing: 0.5px;
+    display: inline-block; /* Allows padding and margin */
 }
 
-.nav-button:hover {
+.nav-link:hover {
     background-color: #4A8C9C; /* Lighter teal on hover */
     transform: translateY(-2px); /* Subtle lift effect */
 }
 
-.nav-button.active {
-    background-color: #E9C46A; /* Golden accent for active button */
+.nav-link.active {
+    background-color: #E9C46A; /* Golden accent for active link */
     color: #264653; /* Dark text on golden background */
     box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* Subtle shadow for active */
 }
@@ -138,7 +139,7 @@ ul li strong {
     font-family: 'Playfair Display', serif; /* Match heading font */
     color: #3C5A6B; /* Slightly lighter dark color */
     margin-bottom: 12px;
-    font-size: 1.8em; /* Larger project titles */
+    font-size: 1.8em;
 }
 
 footer {
@@ -189,7 +190,7 @@ a:hover {
         font-size: 1.1em;
     }
 
-    .nav-button {
+    .nav-link { /* Adjust nav link styling for smaller screens */
         padding: 10px 20px;
         margin: 0 5px;
         font-size: 1em;
@@ -217,9 +218,9 @@ a:hover {
         font-size: 2.2em;
     }
 
-    .nav-button {
-        display: block; /* Stack buttons on small screens */
-        width: calc(100% - 16px); /* Full width minus margin */
+    .nav-link { /* Stack links on very small screens */
+        display: block;
+        width: calc(100% - 16px);
         margin: 10px auto;
     }
 
