@@ -1,3 +1,4 @@
+/* General Body & Typography Defaults */
 /* Basic Reset & Box-Sizing */
 *, *::before, *::after {
     box-sizing: border-box;
@@ -6,225 +7,169 @@
 }
 
 body {
-    font-family: 'Georgia', serif; /* A classic, elegant serif font */
-    line-height: 1.6;
-    color: #4A4A4A; /* Softer, richer dark grey */
-    background-color: #F8F8F8; /* Very light off-white background */
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Use Roboto for general text */
+    line-height: 1.7; /* Slightly increased line height for better readability */
+    color: #333; /* Dark grey for good readability */
+    background-color: #f9f9f9; /* Light off-white background */
     margin: 0;
     padding: 0;
+    font-size: 16px; /* Base font size */
 }
 
-.container {
-    max-width: 900px; /* Max width for content */
-    margin: 20px auto; /* Center content with some top/bottom margin */
-    padding: 0 20px; /* Padding on sides for smaller screens */
+/* Ensure headings use Playfair Display */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Playfair Display for all headings */
+    color: #2c3e50; /* Darker color for headings */
+    line-height: 1.3;
 }
 
+/* Adjust paragraph margins for better flow */
+p {
+    margin-bottom: 1em; /* Space paragraphs out */
+}
+
+/* Styles for lists */
+ul {
+    list-style: disc; /* Default disc for unordered lists */
+    margin-left: 20px; /* Indent lists */
+    margin-bottom: 1em;
+}
+
+ul li {
+    margin-bottom: 0.5em; /* Space list items out */
+}
+
+
+/* --- Header Styles --- */
 header {
-    background-color: #264653; /* Dark teal/pine green - sophisticated */
-    color: #E9EDEE; /* Light grey for text on dark background */
-    padding: 40px 20px;
+    background-color: #34495e; /* Dark blue background */
+    color: #ecf0f1; /* Light grey text */
+    padding: 30px 20px;
     text-align: center;
-    border-bottom: 5px solid #E9C46A; /* Warm, golden accent */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-    font-family: 'Playfair Display', serif; /* Elegant heading font */
-    font-size: 3.5em; /* Slightly larger for impact */
+    font-size: 3.2em; /* Keep this specific override for the main title */
     margin-bottom: 10px;
-    letter-spacing: 2px; /* Increased spacing for elegance */
+    letter-spacing: 1.5px;
+    color: #ecf0f1; /* White for heading in header */
 }
 
 header p {
-    font-size: 1.3em; /* Slightly larger paragraph */
+    font-size: 1.2em;
     opacity: 0.9;
+    color: #ecf0f1; /* White for text in header */
 }
 
-/* Navigation Links Styling (now <a> tags) */
+/* --- Navigation Styles --- */
 nav {
-    margin-top: 25px; /* More space above nav */
+    margin-top: 25px;
+    background-color: #34495e; /* Slightly lighter dark blue for nav background */
+    padding: 10px 0;
+    border-radius: 5px; /* Slightly rounded corners for the nav bar */
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the nav links */
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .nav-link {
-    background-color: #366171; /* Darker teal for links */
-    color: #E9EDEE;
-    text-decoration: none; /* Remove underline */
-    padding: 12px 25px; /* More padding for a bolder look */
-    margin: 0 8px; /* Spacing between links */
-    border-radius: 5px; /* Slightly rounded */
-    cursor: pointer; /* Keep pointer cursor */
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-family: 'Roboto', sans-serif; /* Clean sans-serif for links */
-    letter-spacing: 0.5px;
-    display: inline-block; /* Allows padding and margin */
+    color: #ecf0f1; /* Light grey text */
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 10px; /* Space between links */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    font-weight: 500; /* Slightly bolder font for links */
+    font-size: 1.05em; /* Slightly larger font for links */
 }
 
 .nav-link:hover {
-    background-color: #4A8C9C; /* Lighter teal on hover */
-    transform: translateY(-2px); /* Subtle lift effect */
+    background-color: #3498db; /* Accent blue on hover */
+    color: #fff; /* White text on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 
 .nav-link.active {
-    background-color: #E9C46A; /* Golden accent for active link */
-    color: #264653; /* Dark text on golden background */
-    box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* Subtle shadow for active */
+    background-color: #3498db; /* Active link background */
+    color: #fff; /* Active link text color */
+    pointer-events: none; /* Prevent clicking the active link (already on that page) */
+    font-weight: 700; /* Bolder for active link */
+    transform: translateY(0); /* No lift for active */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle inner shadow for active */
 }
 
 
+/* --- Main Content Section Styles --- */
 main {
-    padding: 40px 20px;
-    max-width: 900px; /* Match header width */
-    margin: 0 auto;
-    background-color: #FFFFFF; /* White background for main content */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* More pronounced, softer shadow */
-    border-radius: 10px; /* Slightly more rounded corners */
+    max-width: 900px;
+    margin: 40px auto; /* More margin above and below main content */
+    padding: 0 25px; /* Slightly more padding on sides */
+    background-color: #fff; /* White background for main content area */
+    border-radius: 8px; /* Rounded corners for the main content block */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle overall shadow for the content block */
+    overflow: hidden; /* Clear any floats inside if necessary */
 }
 
 section {
-    margin-bottom: 45px; /* More space between sections */
-    padding-bottom: 25px;
-    border-bottom: 1px solid #EDEDED; /* Lighter, more subtle separator */
+    padding: 30px 0; /* Consistent internal padding for sections */
+    border-bottom: 1px solid #eee; /* Light separator line between sections */
 }
 
 section:last-of-type {
     border-bottom: none; /* No border for the last section */
-    margin-bottom: 0;
+    padding-bottom: 0; /* No bottom padding for the very last section */
 }
 
-h2 {
-    font-family: 'Playfair Display', serif; /* Match header h1 font */
-    color: #264653; /* Match header dark color */
-    font-size: 2.5em; /* Larger headings for sections */
-    margin-bottom: 20px; /* More space below heading */
-    border-left: 6px solid #E9C46A; /* Thicker, golden accent bar */
-    padding-left: 12px;
-    line-height: 1.2;
+section h2 {
+    font-size: 2.2em;
+    margin-bottom: 25px; /* More space below section headings */
+    text-align: center; /* Center section headings */
+    position: relative;
+    padding-bottom: 10px; /* Space for the underline */
 }
 
-p {
-    margin-bottom: 18px; /* More space between paragraphs */
-    line-height: 1.7; /* Comfortable reading */
-    font-size: 1.05em; /* Slightly larger text */
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px; /* Short underline */
+    height: 3px;
+    background-color: #3498db; /* Accent color for underline */
+    margin: 10px auto 0; /* Center the underline */
+    border-radius: 2px;
 }
 
-ul {
-    list-style: none; /* Remove default bullets */
-    padding-left: 0;
+/* Individual Section Item Styles (if applicable for skills, projects, experience) */
+.project-item, .experience-item, .education-item, .skill-category {
+    background-color: #fcfcfc; /* Very light background for items */
+    border: 1px solid #eee; /* Light border */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px; /* Space between items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Very subtle shadow for individual items */
 }
 
-ul li {
-    background-color: #F5F9FB; /* Very light blue/grey for list items */
-    margin-bottom: 10px; /* More space between list items */
-    padding: 12px 20px;
-    border-radius: 6px;
-    border-left: 4px solid #78909C; /* A muted blue-grey accent for list items */
-    font-size: 1.05em;
-}
-
-ul li strong {
-    color: #264653; /* Match primary dark color */
-}
-
-.project-item {
-    background-color: #FAFAFA; /* Subtle background for project boxes */
-    border: 1px solid #E0E0E0; /* Softer border */
-    padding: 25px; /* More padding */
-    margin-bottom: 25px; /* More space below */
-    border-radius: 10px; /* More rounded */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* Lighter shadow */
-}
-
-.project-item h3 {
-    font-family: 'Playfair Display', serif; /* Match heading font */
-    color: #3C5A6B; /* Slightly lighter dark color */
-    margin-bottom: 12px;
-    font-size: 1.8em;
-}
-
-footer {
-    background-color: #264653; /* Match header dark color */
-    color: #E9EDEE;
-    text-align: center;
-    padding: 35px 20px; /* More padding */
-    margin-top: 50px; /* More space above footer */
-    border-top: 5px solid #E9C46A; /* Golden accent */
-    border-radius: 0 0 10px 10px; /* Rounded bottom corners if main content is also rounded */
-}
-
-footer h2 {
-    color: #E9EDEE; /* Light color for heading in footer */
-    border-left-color: #E9C46A; /* Golden accent bar */
-    margin-bottom: 15px;
-}
-
-footer p {
+.project-item h3, .experience-item h3, .education-item h3, .skill-category h3 {
+    color: #3498db; /* Accent color for sub-headings */
     margin-bottom: 10px;
-    opacity: 0.9;
 }
 
-a {
-    color: #E9C46A; /* Golden accent for links */
+/* Links within content */
+main a {
+    color: #3498db; /* Accent blue for links in content */
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
-a:hover {
-    color: #D4AF37; /* Slightly darker gold on hover */
+main a:hover {
     text-decoration: underline;
+    color: #2980b9; /* Darker blue on hover */
 }
 
-.copyright {
-    margin-top: 25px; /* More space above copyright */
-    font-size: 0.95em;
-    opacity: 0.8;
-}
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.8em;
-    }
-
-    header p {
-        font-size: 1.1em;
-    }
-
-    .nav-link { /* Adjust nav link styling for smaller screens */
-        padding: 10px 20px;
-        margin: 0 5px;
-        font-size: 1em;
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    .project-item h3 {
-        font-size: 1.6em;
-    }
-}
-
-@media (max-width: 480px) {
-    main, footer {
-        padding: 25px 15px;
-    }
-
-    header {
-        padding: 30px 15px;
-    }
-
-    h1 {
-        font-size: 2.2em;
-    }
-
-    .nav-link { /* Stack links on very small screens */
-        display: block;
-        width: calc(100% - 16px);
-        margin: 10px auto;
-    }
-
-    h2 {
-        font-size: 1.8em;
-    }
-}
+/* --- Footer Styles --- */
+footer {
+    background-color: #2c3e50; /* Darker blue for footer */
+    color: #
