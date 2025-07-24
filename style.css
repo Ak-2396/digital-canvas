@@ -213,6 +213,23 @@ footer {
     }
 }
 
+/* --- New CSS for Page Transition Out Effect --- */
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px); /* Slides down slightly as it fades out */
+    }
+}
+
+.page-transition-out {
+    animation: fadeOutDown 0.5s ease-out forwards; /* 0.5s duration, smooth ease-out, stays at end state */
+}
+
+
 /* --- Responsive Design (Media Queries) --- */
 @media (max-width: 768px) {
     header h1 {
