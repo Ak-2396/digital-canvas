@@ -1,3 +1,250 @@
+/* General Body & Typography Defaults */
+/* Basic Reset & Box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Use Roboto for general text */
+    line-height: 1.7; /* Slightly increased line height for better readability */
+    color: #333; /* Dark grey for good readability */
+    background-color: #f9f9f9; /* Light off-white background */
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* Base font size */
+}
+
+/* Ensure headings use Playfair Display */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Playfair Display for all headings */
+    color: #2c3e50; /* Darker color for headings */
+    line-height: 1.3;
+}
+
+/* Adjust paragraph margins for better flow */
+p {
+    margin-bottom: 1em; /* Space paragraphs out */
+}
+
+/* Styles for lists (kept for other pages if needed, but not used for skills tags now) */
+ul {
+    list-style: disc; /* Default disc for unordered lists */
+    margin-left: 20px; /* Indent lists */
+    margin-bottom: 1em;
+}
+
+ul li {
+    margin-bottom: 0.5em; /* Space list items out */
+}
+
+
+/* --- Header Styles --- */
+header {
+    background-color: #34495e; /* Dark blue background */
+    color: #ecf0f1; /* Light grey text */
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3.2em; /* Keep this specific override for the main title */
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+    color: #ecf0f1; /* White for heading in header */
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    color: #ecf0f1; /* White for text in header */
+}
+
+/* --- Navigation Styles --- */
+nav {
+    margin-top: 25px;
+    background-color: #34495e; /* Slightly lighter dark blue for nav background */
+    padding: 10px 0;
+    border-radius: 5px; /* Slightly rounded corners for the nav bar */
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the nav links */
+    flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.nav-link {
+    color: #ecf0f1; /* Light grey text */
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 10px; /* Space between links */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    font-weight: 500; /* Slightly bolder font for links */
+    font-size: 1.05em; /* Slightly larger font for links */
+}
+
+.nav-link:hover {
+    background-color: #3498db; /* Accent blue on hover */
+    color: #fff; /* White text on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.nav-link.active {
+    background-color: #3498db; /* Active link background */
+    color: #fff; /* Active link text color */
+    pointer-events: none; /* Prevent clicking the active link (already on that page) */
+    font-weight: 700; /* Bolder for active link */
+    transform: translateY(0); /* No lift for active */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle inner shadow for active */
+}
+
+
+/* --- Main Content Section Styles --- */
+main {
+    max-width: 900px;
+    margin: 40px auto; /* More margin above and below main content */
+    padding: 0 25px; /* Slightly more padding on sides */
+    background-color: #fff; /* White background for main content area */
+    border-radius: 8px; /* Rounded corners for the main content block */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Subtle overall shadow for the content block */
+    overflow: hidden; /* Clear any floats inside if necessary */
+    /* ADDED FOR ANIMATION */
+    animation: fadeInUp 0.8s ease-out forwards; /* 0.8s duration, smooth ease-out, stays at end state */
+}
+
+section {
+    padding: 30px 0; /* Consistent internal padding for sections */
+    border-bottom: 1px solid #eee; /* Light separator line between sections */
+}
+
+section:last-of-type {
+    border-bottom: none; /* No border for the last section */
+    padding-bottom: 0; /* No bottom padding for the very last section */
+}
+
+section h2 {
+    font-size: 2.2em;
+    margin-bottom: 25px; /* More space below section headings */
+    text-align: center; /* Center section headings */
+    position: relative;
+    padding-bottom: 10px; /* Space for the underline */
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px; /* Short underline */
+    height: 3px;
+    background-color: #3498db; /* Accent color for underline */
+    margin: 10px auto 0; /* Center the underline */
+    border-radius: 2px;
+}
+
+/* Individual Section Item Styles (if applicable for skills, projects, experience) */
+.project-item, .experience-item, .education-item, .skill-category {
+    background-color: #fcfcfc; /* Very light background for items */
+    border: 1px solid #eee; /* Light border */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px; /* Space between items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Very subtle shadow for individual items */
+    /* ADDED FOR ANIMATION */
+    opacity: 0; /* Start invisible for animation */
+    animation: fadeInUp 0.8s ease-out forwards; /* Apply animation */
+    /* ADDED FOR ENHANCED HOVER ANIMATION */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out; /* Smooth transition for hover */
+}
+
+/* Enhanced Hover Effect for Cards */
+.project-item:hover,
+.experience-item:hover,
+.education-item:hover,
+.skill-category:hover {
+    transform: translateY(-8px) scale(1.02) rotateZ(1deg); /* Lift, slightly enlarge, and subtle rotation */
+    box-shadow: 0 12px 25px rgba(52, 152, 219, 0.5), 0 0 15px rgba(52, 152, 219, 0.3); /* Stronger, accent-blue glow */
+    border-color: #3498db; /* Highlight border with accent color */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+.project-item h3, .experience-item h3, .education-item h3, .skill-category h3 {
+    color: #3498db; /* Accent color for sub-headings */
+    margin-bottom: 10px;
+    text-align: center; /* Center the text heading */
+}
+
+.skill-category h3 .fas { /* Styling for the Font Awesome icon */
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.2em; /* Slightly larger icon */
+    color: #3498db; /* Accent color for icon */
+    display: inline-block; /* Ensures it behaves like a block but stays inline */
+    vertical-align: middle; /* Align icon vertically with text */
+}
+
+
+/* Links within content */
+main a {
+    color: #3498db; /* Accent blue for links in content */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: #2980b9; /* Darker blue on hover */
+}
+
+
+/* --- Footer Styles --- */
+footer {
+    background-color: #2c3e50; /* Darker blue for footer */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px; /* More space above footer */
+    font-size: 0.9em;
+}
+
+.copyright {
+    opacity: 0.8;
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Starts 20px below its final position */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends at its final position */
+    }
+}
+
+/* --- New CSS for Page Transition Out Effect --- */
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px); /* Slides down slightly as it fades out */
+    }
+}
+
+.page-transition-out {
+    animation: fadeOutDown 0.5s ease-out forwards; /* 0.5s duration, smooth ease-out, stays at end state */
+}
+
+/* Fade-in animation for the About Me section on index.html */
+.fade-in-section {
+    opacity: 0; /* Start invisible */
+    animation: fadeInUp 0.8s ease-out forwards; /* Apply the existing fadeInUp animation */
+}
+
 /* Styles for the introductory paragraph in the skills section */
 .skills-intro {
     text-align: center;
@@ -36,20 +283,6 @@
     color: #fff; /* White text on hover */
     transform: translateY(-2px); /* Slight lift effect on hover */
     box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3); /* Subtle shadow on hover */
-}
-
-/* Adjust skill category heading for better alignment with icons */
-.skill-category h3 {
-    display: flex; /* Use flexbox to align icon and text */
-    align-items: center; /* Vertically center them */
-    justify-content: center; /* Center the heading content */
-    margin-bottom: 20px; /* More space below heading */
-}
-
-.skill-category h3 .fas { /* Styling for the Font Awesome icon */
-    margin-right: 10px; /* Space between icon and text */
-    font-size: 1.2em; /* Slightly larger icon */
-    color: #3498db; /* Accent color for icon */
 }
 
 /* Responsive adjustments for skill tags */
