@@ -229,6 +229,12 @@ footer {
     animation: fadeOutDown 0.5s ease-out forwards; /* 0.5s duration, smooth ease-out, stays at end state */
 }
 
+/* NEW: Fade-in animation for the About Me section on index.html */
+.fade-in-section {
+    opacity: 0; /* Start invisible */
+    animation: fadeInUp 0.8s ease-out forwards; /* Apply the existing fadeInUp animation */
+}
+
 
 /* --- Responsive Design (Media Queries) --- */
 @media (max-width: 768px) {
